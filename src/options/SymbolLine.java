@@ -1,4 +1,4 @@
-package report;
+package options;
 
 public class SymbolLine {
 	private char symbol;
@@ -10,6 +10,12 @@ public class SymbolLine {
 		price = new PriceTag(20, 0);
 	}
 	
+	public SymbolLine(char v_symbol, PriceTag v_tag)
+	{
+		symbol = v_symbol;
+		price = v_tag;
+	}
+	
 	public void Print()
 	{
 		
@@ -17,6 +23,11 @@ public class SymbolLine {
 	
 	public int CalcPrice()
 	{
-		
+		return price.CalcPrice();
+	}
+	
+	public PriceTag GetPriceTag()
+	{
+		return price;
 	}
 }

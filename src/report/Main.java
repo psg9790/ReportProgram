@@ -1,10 +1,13 @@
 package report;
 
+import builder.PageBuilderFactory;
+import builder.DefaultFactory;
+
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("hello, world!");
+		PageBuilderFactory factory = new DefaultFactory();
+		factory.GetBuilder();
 	}
 
 }

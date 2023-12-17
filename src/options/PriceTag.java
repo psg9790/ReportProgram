@@ -1,4 +1,4 @@
-package report;
+package options;
 
 public class PriceTag {
 	private int price;
