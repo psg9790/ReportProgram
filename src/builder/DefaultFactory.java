@@ -24,7 +24,9 @@ public class DefaultFactory extends PageBuilderFactory {
 		cPage.AddTail(new PageTail(builder.GetTitle(), 9,  40, true, new PriceTag(20, 0)));
 		builder.AddPage(cPage);
 		
-		builder.AddPage(new Page(new PriceTag(100, 0), new BackReader()));
+		Page bPage = new Page(new PriceTag(100, 0), new BackReader());
+		bPage.AddTail(new PageTail(builder.GetAuthor(), 8, 40, true, new PriceTag(0, 0)));
+		builder.AddPage(bPage);
 		
 		builder.Print();
 		System.out.println("price: " + builder.CalcPrice());
