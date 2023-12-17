@@ -1,6 +1,5 @@
 package builder;
 
-import options.SymbolLine;
 import page.Page;
 
 public class PageBuilder {
@@ -8,8 +7,6 @@ public class PageBuilder {
 	private String author;
 	private String content;
 	private String tel;
-	private SymbolLine header;
-	private SymbolLine tail;
 	private Page pages;
 	
 	public PageBuilder()
@@ -22,8 +19,6 @@ public class PageBuilder {
 				+ "uvwxyabcdefghijklmnopqrstuvwxyabcdefghij"
 				+ "klmnopqrstuvwxyabcdefghijklmnopqrstuvwxy";
 		tel = "2023-12-06";
-		header = new SymbolLine('*');
-		tail = new SymbolLine('=');
 	}
 	
 	public void Print()
@@ -57,16 +52,6 @@ public class PageBuilder {
 		tel = v_tel;
 	}
 	
-	public void SetHeaderSymbol(char v_header)
-	{
-		header = new SymbolLine(v_header);
-	}
-	
-	public void SetTailSymbol(char v_tail)
-	{
-		tail = new SymbolLine(v_tail);
-	}
-	
 	public String GetTitle()
 	{
 		return title;
@@ -85,20 +70,6 @@ public class PageBuilder {
 	public String GetTel()
 	{
 		return tel;
-	}
-	
-	public SymbolLine GetHeader()
-	{
-		if(header == null)
-			header = new SymbolLine('*');
-		return header;
-	}
-	
-	public SymbolLine GetTail()
-	{
-		if(tail == null)
-			tail = new SymbolLine('=');
-		return tail;
 	}
 	
 	public void AddPage(Page v_page)

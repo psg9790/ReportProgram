@@ -28,10 +28,10 @@ public class Page {
 	public int CalcPrice()
 	{
 		int ret = price.CalcPrice();
+		ret *= pageCounts;
 		if(tails != null)
 			ret += tails.CalcPrice();
 		
-		ret *= pageCounts;
 		if(nextPage != null)
 		{
 			return nextPage.CalcPrice() + ret;

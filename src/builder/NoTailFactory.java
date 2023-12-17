@@ -7,7 +7,7 @@ import reader.BackReader;
 import reader.ContentReader;
 import reader.FrontReader;
 
-public class DefaultFactory extends PageBuilderFactory {
+public class NoTailFactory extends PageBuilderFactory {
 
 	@Override
 	public PageBuilder GetBuilder() {
@@ -28,8 +28,6 @@ public class DefaultFactory extends PageBuilderFactory {
 		cPage.AddTail(new PageTail("****************************************", 1, 0, false, new PriceTag(0, 0)));
 		cPage.AddTail(new PageTail("========================================", 7, 0, false, new PriceTag(0, 0)));
 		cPage.AddTail(new PageTail("========================================", 8, 0, false, new PriceTag(0, 0)));
-		cPage.AddTail(new PageTail(builder.GetTel(), 9,  0, false, new PriceTag(50, 0)));
-		cPage.AddTail(new PageTail(builder.GetTitle(), 9,  40, true, new PriceTag(50, 0)));
 		builder.AddPage(cPage);
 		
 		Page bPage = new Page(new PriceTag(100, 0), new BackReader());

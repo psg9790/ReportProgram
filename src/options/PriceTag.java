@@ -12,7 +12,7 @@ public class PriceTag {
 	
 	public int CalcPrice()
 	{
-		return (int)(price * (1.0 - discount));
+		return (int)Math.ceil(price * (1.0 - discount));
 	}
 	
 	public void SetPrice(int v_price)
