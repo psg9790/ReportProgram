@@ -15,9 +15,13 @@ public class PageBuilder {
 	public PageBuilder()
 	{
 		title = "No Title";
-		author = "test author";
-		content = "I am Report";
-		tel = "010-1234-5678";
+		author = "Noway Jose";
+		content = "abcdefghijklmnopqrstuvwxyabcdefghijklmno"
+				+ "pqrstuvwxyabcdefghijklmnopqrstuvwxyabcde"
+				+ "fghijklmnopqrstuvwxyabcdefghijklmnopqrst"
+				+ "uvwxyabcdefghijklmnopqrstuvwxyabcdefghij"
+				+ "klmnopqrstuvwxyabcdefghijklmnopqrstuvwxy";
+		tel = "2023-12-06";
 		header = new SymbolLine('*');
 		tail = new SymbolLine('=');
 	}

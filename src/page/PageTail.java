@@ -23,12 +23,12 @@ public class PageTail {
 	{
 		if(inversionDir == false) // 정방향
 		{
-			int endPos = rows * 41 + cols + text.length();
+			int endPos = (rows * 41 + cols) + text.length();
 			v_builder.replace(rows * 41 + cols, endPos, text);
 		}
 		else // 역방향
 		{
-			int endPos = rows * 41 + cols - text.length();
+			int endPos = (rows * 41 + cols) - text.length();
 			v_builder.replace(endPos, rows * 41 + cols, text);
 		}
 		if(nextTail != null)

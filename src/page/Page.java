@@ -9,6 +9,7 @@ public class Page {
 	protected PageTail tails;
 	protected PriceTag price;
 	protected PageReader reader;
+	private int pageCounts;
 	
 	public Page(PriceTag v_price, PageReader v_reader)
 	{
@@ -18,9 +19,9 @@ public class Page {
 	
 	public void Print(PageBuilder v_builder) 
 	{
-		reader.ReadPage(v_builder, tails);
+		reader.ReadPage(v_builder, this);
 		
-		SlicePage();
+		//SlicePage();
 		if(nextPage != null)
 			nextPage.Print(v_builder);
 	}
@@ -29,6 +30,8 @@ public class Page {
 		int ret = price.CalcPrice();
 		if(tails != null)
 			ret += tails.CalcPrice();
+		
+		ret *= pageCounts;
 		if(nextPage != null)
 		{
 			return nextPage.CalcPrice() + ret;
@@ -46,7 +49,7 @@ public class Page {
 		nextPage.SetNextPage(v_page);
 	}
 	
-	protected void SlicePage()
+	public void SlicePage()
 	{
 		System.out.println("------------------page------------------");
 	}
@@ -59,5 +62,15 @@ public class Page {
 			return;
 		}
 		tails.SetNextTail(v_tail);
+	}
+	
+	public PageTail GetTails()
+	{
+		return tails;
+	}
+	
+	public void IncreasePageCount()
+	{
+		pageCounts++;
 	}
 }

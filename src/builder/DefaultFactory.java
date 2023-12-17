@@ -16,12 +16,12 @@ public class DefaultFactory extends PageBuilderFactory {
 		builder.AddPage(new Page(new PriceTag(100, 0), new FrontReader()));
 		
 		Page cPage = new Page(new PriceTag(100, 0), new ContentReader());
-		cPage.AddTail(new PageTail("****************************************", 0, 0, false, new PriceTag(10, 0)));
-		cPage.AddTail(new PageTail("****************************************", 1, 0, false, new PriceTag(10, 0)));
-		cPage.AddTail(new PageTail("========================================", 7, 0, false, new PriceTag(10, 0)));
-		cPage.AddTail(new PageTail("========================================", 8, 0, false, new PriceTag(10, 0)));
-		cPage.AddTail(new PageTail(builder.GetTel(), 9,  0, false, new PriceTag(20, 0)));
-		cPage.AddTail(new PageTail(builder.GetTitle(), 9,  40, true, new PriceTag(20, 0)));
+		cPage.AddTail(new PageTail("****************************************", 0, 0, false, new PriceTag(0, 0)));
+		cPage.AddTail(new PageTail("****************************************", 1, 0, false, new PriceTag(0, 0)));
+		cPage.AddTail(new PageTail("========================================", 7, 0, false, new PriceTag(0, 0)));
+		cPage.AddTail(new PageTail("========================================", 8, 0, false, new PriceTag(0, 0)));
+		cPage.AddTail(new PageTail(builder.GetTel(), 9,  0, false, new PriceTag(25, 0)));
+		cPage.AddTail(new PageTail(builder.GetTitle(), 9,  40, true, new PriceTag(25, 0)));
 		builder.AddPage(cPage);
 		
 		Page bPage = new Page(new PriceTag(100, 0), new BackReader());
